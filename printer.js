@@ -33,10 +33,21 @@ export default function usePrinter() {
             console.log(line.join('\t')) // Array.join convierta a String. String.split(separador) genera un array a partir de String
         }
     }
+    const printCoveredBoard = () => {
+        for(let i = 0; i < ROWS; i++) {
+            let lineArr = []
+            for(let j = 0; j < COLS; j++) {
+                lineArr.push(COVERED_CARD)
+            }
+            console.log(`${lineArr.join('\t')}`)
+        }
+        console.log()
+    }
 
     return {
         printHeading,
         printLine,
-        printBoard
+        printBoard,
+        printCoveredBoard
     }
 }
